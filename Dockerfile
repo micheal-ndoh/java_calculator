@@ -7,7 +7,7 @@ COPY src/ ./src/
 
 RUN mkdir -p out
 
-RUN javac src/Calculator.java -d out
+RUN find src -name "*.java" | xargs javac -d out
 
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
