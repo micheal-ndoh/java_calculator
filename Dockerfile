@@ -1,4 +1,4 @@
-ARG JAVA_VERSION=17
+ARG JAVA_VERSION=8
 FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine as builder
 
 WORKDIR /usr/src/app
@@ -15,4 +15,4 @@ WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app/out /usr/src/app
 
-CMD ["java", "Calculator"]
+CMD ["java", "-cp", "/usr/src/app", "Calculator"]
