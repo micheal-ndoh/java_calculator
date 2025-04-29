@@ -7,7 +7,7 @@ COPY src/ ./src/
 
 RUN mkdir -p out
 
-RUN find src -name "*.java" | xargs javac -d out
+RUN javac -d out $(find src -name "*.java")
 
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
