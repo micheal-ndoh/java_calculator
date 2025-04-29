@@ -4,6 +4,7 @@ FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine as builder
 WORKDIR /usr/src/app
 
 COPY src/ ./src/
+COPY bin/ ./bin/
 
 
 RUN javac -d bin $(find src -name "*.java")
