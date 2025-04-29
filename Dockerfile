@@ -7,7 +7,7 @@ COPY src/ ./src/
 COPY build/*.class ./ 
 
 
-RUN javac src/MathOperations/Calculator.java -d out
+RUN javac src/Calculator.java -d out
 
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
