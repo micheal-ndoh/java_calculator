@@ -1,3 +1,5 @@
+[![Docker Build and Push](https://github.com/micheal-ndoh/java_calculator/actions/workflows/docker.yml/badge.svg)](https://github.com/micheal-ndoh/java_calculator/actions/workflows/docker.yml)
+
 # Java Calculator
 
 This is a simple Java-based calculator application that supports basic arithmetic operations (`+`, `-`, `*`, `/`) and factorial (`!`). The application is containerized using Docker and can run on different Java versions.
