@@ -4,8 +4,8 @@ FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine as builder
 WORKDIR /usr/src/app
 
 COPY src/ ./src/
-COPY build/*.class ./ 
 
+RUN mkdir -p out
 
 RUN javac src/Calculator.java -d out
 
