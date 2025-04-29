@@ -1,18 +1,20 @@
 ARG JAVA_VERSION=8
 FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine as builder
 
-WORKDIR /usr/src/app
+WORKDIR /build
+
+COPY . ./
 
 COPY src/ ./src/
 
-RUN mkdir -p out
+RUN mkdir -p classes
 
-RUN javac -d out $(find src -name "*.java")
+RUN javac -d classes $(find src -name "*.java")
 
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY --from=builder /usr/src/app/out /usr/src/app
+COPY --from=builder /build/classes /app
 
-CMD ["java", "-cp", "/usr/src/app", "Calculator"]
+CMD ["java", "-cp", "/app", "Calculator"]
