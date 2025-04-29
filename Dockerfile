@@ -5,9 +5,8 @@ WORKDIR /usr/src/app
 
 COPY src/ ./src/
 
-RUN mkdir -p out
 
-RUN javac -d out $(find src -name "*.java")
+RUN javac -d bin $(find src -name "*.java")
 
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
