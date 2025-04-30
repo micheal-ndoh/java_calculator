@@ -57,7 +57,7 @@ Once the container is running, you will be prompted to enter a calculation. Use 
 >For subtraction: 10 - 4
 >For multiplication: 6 * 7
 >For division: 8 / 2
->For factorial: 5!
+>For factorial: 5!;
 
 The application will return the result of the calculation.
 
