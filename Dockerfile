@@ -7,6 +7,7 @@ COPY src/ ./src/
 COPY MANIFEST.MF ./MANIFEST.MF
 
 RUN mkdir bin
+
 RUN javac -d bin $(find src -name "*.java")
 
 RUN jar cfm Calculator.jar MANIFEST.MF -C bin .
